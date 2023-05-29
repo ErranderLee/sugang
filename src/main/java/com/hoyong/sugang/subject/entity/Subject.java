@@ -24,4 +24,8 @@ public class Subject {
     this.name = name;
     this.total = total;
   }
+
+  public void reduceTotal() {
+    this.total--;
+  }
 }
