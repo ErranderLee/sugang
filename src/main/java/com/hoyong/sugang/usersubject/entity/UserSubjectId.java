@@ -16,4 +16,9 @@ public class UserSubjectId implements Serializable {
   private Long userId;
   @Column(name = "subject_id")
   private Long subjectId;
+
+  public UserSubjectId(Long userId, Long subjectId) {
+    this.userId = userId;
+    this.subjectId = subjectId;
+  }
 }

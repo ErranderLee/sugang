@@ -30,7 +30,12 @@ public class UserSubject {
   private Subject subject;
 
   public UserSubject(User user, Subject subject) {
+    this.id = createId(user, subject);
     this.user = user;
     this.subject = subject;
+  }
+
+  private UserSubjectId createId(User user, Subject subject) {
+    return new UserSubjectId(user.getId(), subject.getId());
   }
 }
