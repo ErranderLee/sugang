@@ -94,7 +94,7 @@ public class SugangNaiveServiceTest extends IntegrationTest {
 
     Optional<Subject> result = subjectRepository.findById(subject.getId());
     int resultTotal = result.get().getTotal();
-    log.info("result(여석) = {}", total);
+    log.info("result(여석) = {}", resultTotal);
 
     Assertions.assertThat(resultTotal).isEqualTo(total - numberOfSugangUsers);
   }
