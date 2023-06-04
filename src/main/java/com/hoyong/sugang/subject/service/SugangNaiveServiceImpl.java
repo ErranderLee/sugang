@@ -6,6 +6,7 @@ import com.hoyong.sugang.user.service.UserFindOneService;
 import com.hoyong.sugang.usersubject.entity.UserSubject;
 import com.hoyong.sugang.usersubject.repository.UserSubjectRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 public class SugangNaiveServiceImpl implements SugangService {
@@ -14,6 +15,7 @@ public class SugangNaiveServiceImpl implements SugangService {
   private final SubjectFindOneService subjectFindOneService;
 
   @Override
+  @Transactional
   public void createSugang(Long userId, Long subjectId) {
     User user = userFindOneService.findOne(userId);
     Subject subject = subjectFindOneService.findOne(subjectId);
