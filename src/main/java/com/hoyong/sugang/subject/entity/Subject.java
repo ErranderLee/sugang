@@ -26,6 +26,10 @@ public class Subject {
   }
 
   public void reduceTotal() {
-    this.total--;
+    if (this.total > 0) {
+      this.total--;
+    } else {
+      throw new RuntimeException("여석이 0 입니다.");
+    }
   }
 }
