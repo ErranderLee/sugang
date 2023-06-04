@@ -10,12 +10,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BeanConfig {
-  private UserSubjectRepository userSubjectRepository;
-  private UserFindOneService userFindOneService;
-  private SubjectFindOneService subjectFindOneService;
 
   @Bean
-  public SugangService sugangService() {
+  public SugangService sugangService(
+      UserSubjectRepository userSubjectRepository,
+      UserFindOneService userFindOneService,
+      SubjectFindOneService subjectFindOneService
+  ) {
     return new SugangNaiveServiceImpl(
         userSubjectRepository,
         userFindOneService,
