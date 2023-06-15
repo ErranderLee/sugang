@@ -21,6 +21,7 @@ public class SugangNaiveServiceImpl implements SugangService {
     Subject subject = subjectFindOneService.findOne(subjectId);
     UserSubject userSubject = new UserSubject(user, subject);
     subject.reduceTotal();
+    userSubjectRepository.flush();
     userSubjectRepository.save(userSubject);
   }
 }
