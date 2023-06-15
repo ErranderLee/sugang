@@ -1,5 +1,6 @@
 package com.hoyong.sugang.config;
 
+import com.hoyong.sugang.common.PersistenceFlushService;
 import com.hoyong.sugang.subject.service.SubjectFindOneService;
 import com.hoyong.sugang.subject.service.SugangNaiveServiceImpl;
 import com.hoyong.sugang.subject.service.SugangService;
@@ -15,12 +16,14 @@ public class BeanConfig {
   public SugangService sugangService(
       UserSubjectRepository userSubjectRepository,
       UserFindOneService userFindOneService,
-      SubjectFindOneService subjectFindOneService
+      SubjectFindOneService subjectFindOneService,
+      PersistenceFlushService persistenceFlushService
   ) {
     return new SugangNaiveServiceImpl(
         userSubjectRepository,
         userFindOneService,
-        subjectFindOneService
+        subjectFindOneService,
+        persistenceFlushService
     );
   }
 
